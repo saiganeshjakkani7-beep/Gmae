@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chain Bloom</title>
+    <meta
+      name="description"
+      content="Chain Bloom is a lightweight one-thumb puzzle game about linking matching tiles before the moves run out."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="game" aria-label="Chain Bloom game">
+        <div class="topbar">
+          <div>
+            <p class="eyebrow">Chain Bloom</p>
+            <h1>Link color chains before the board wins.</h1>
+          </div>
+          <button id="newGameButton" class="icon-button" type="button" aria-label="Start a new run" title="New run">
+            R
+          </button>
+        </div>
+
+        <div class="status-grid" aria-live="polite">
+          <div class="stat">
+            <span>Score</span>
+            <strong id="scoreValue">0</strong>
+          </div>
+          <div class="stat">
+            <span>Target</span>
+            <strong id="targetValue">900</strong>
+          </div>
+          <div class="stat">
+            <span>Moves</span>
+            <strong id="movesValue">18</strong>
+          </div>
+          <div class="stat">
+            <span>Best</span>
+            <strong id="bestValue">0</strong>
+          </div>
+        </div>
+
+        <div class="meter" aria-hidden="true">
+          <div id="progressBar"></div>
+        </div>
+
+        <div class="board-wrap">
+          <canvas id="gameCanvas" width="720" height="720" aria-label="Game board"></canvas>
+          <div id="resultPanel" class="result-panel" hidden>
+            <p id="resultLabel">Level clear</p>
+            <h2 id="resultTitle">Nice chain.</h2>
+            <button id="continueButton" type="button">Continue</button>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="shuffleButton" type="button">Shuffle</button>
+          <button id="hintButton" type="button">Hint</button>
+          <button id="soundButton" type="button" aria-pressed="true">Sound On</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
